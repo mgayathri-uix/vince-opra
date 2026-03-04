@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Grow Creatives — Build a Sustainable Creative Business</title><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--cream:#FAFAF4;--sf:#FFFFFF;--grn:#1A4731;--grn2:#2D6A4F;--grn-p:rgba(26,71,49,.08);--grn-b:rgba(26,71,49,.18);--amb:#F59500;--amb2:#F7AC22;--amb-p:rgba(245,149,0,.1);--amb-b:rgba(245,149,0,.25);--coral:#EF6C57;--cor-p:rgba(239,108,87,.09);--ink:#0F1C14;--tx:#5C7265;--mu:#A8BDB3;--rl:#DDE8E2}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* TOP BAR */
+.topbar{background:var(--grn);padding:10px 52px;display:flex;align-items:center;justify-content:center;gap:24px}
+.tb-t{font-size:12px;font-weight:500;color:rgba(255,255,255,.7);letter-spacing:.04em}
+.tb-t strong{color:#fff}
+.tb-sep{color:rgba(255,255,255,.25)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(250,250,244,.97);border-bottom:1px solid var(--rl);backdrop-filter:blur(12px)}
+.logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.logo em{font-style:italic;color:var(--grn)}
+.nav-r{display:flex;align-items:center;gap:14px}
+.nav-tag{font-size:11px;font-weight:500;color:var(--mu);letter-spacing:.04em}
+.btn-nav{background:var(--grn);color:#fff;font-size:13px;font-weight:600;padding:9px 22px;border-radius:6px;text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s;letter-spacing:-.01em}
+.btn-nav:hover{background:var(--grn2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,71,49,.25)}
+
+/* ═══ HERO: asymmetric two-band stacked, not split ═══ */
+.hero{position:relative;z-index:1;overflow:hidden;border-bottom:1px solid var(--rl)}
+
+/* BAND 1: giant headline, full-width */
+.hero-headline-band{background:var(--sf);padding:88px 52px 60px;position:relative;border-bottom:1px solid var(--rl);overflow:hidden}
+/* faint green arc */
+.hero-headline-band::before{content:'';position:absolute;top:-300px;right:-300px;width:800px;height:800px;background:radial-gradient(circle,rgba(26,71,49,.05) 0%,transparent 55%);pointer-events:none}
+/* amber floor */
+.hero-headline-band::after{content:'';position:absolute;bottom:-100px;left:-100px;width:600px;height:400px;background:radial-gradient(circle,rgba(245,149,0,.07) 0%,transparent 60%);pointer-events:none}
+
+.hb-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:end}
+
+.hb-left{}
+.hb-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;opacity:0;animation:up .5s .1s forwards}
+.hk-dot{width:8px;height:8px;border-radius:50%;background:var(--amb)}
+.hk-t{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grn)}
+
+h1{font-family:'Fraunces',serif;font-size:clamp(50px,6.2vw,92px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:var(--ink);opacity:0;animation:up .8s .2s forwards}
+h1 em{font-style:italic;color:var(--grn)}
+h1 .amb{color:var(--amb)}
+
+/* right side: proof stack */
+.hb-right{padding-bottom:8px;opacity:0;animation:up .7s .3s forwards}
+.proof-stack{display:flex;flex-direction:column;gap:10px}
+.ps-card{background:var(--cream);border:1px solid var(--rl);border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:border-color .2s}
+.ps-card:hover{border-color:var(--grn-b)}
+.ps-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ps-icon.g{background:var(--grn-p)}
+.ps-icon.a{background:var(--amb-p)}
+.ps-icon.c{background:var(--cor-p)}
+.ps-c{flex:1}
+.ps-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:1px;letter-spacing:-.01em}
+.ps-detail{font-size:11px;font-weight:400;color:var(--tx)}
+.ps-result{font-size:12px;font-weight:700;color:var(--grn);white-space:nowrap}
+
+/* BAND 2: sub, cta, stats bar */
+.hero-cta-band{background:var(--grn);padding:44px 52px;display:grid;grid-template-columns:1fr auto;gap:52px;align-items:center}
+.hcb-left{}
+.hero-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.75;max-width:580px;margin-bottom:28px;opacity:0;animation:up .7s .45s forwards}
+.hero-sub strong{color:#fff;font-weight:500}
+.cta-row{display:flex;align-items:center;gap:16px;opacity:0;animation:up .6s .56s forwards}
+.btn-hero{display:inline-flex;align-items:center;gap:10px;background:var(--amb);color:var(--ink);font-size:15px;font-weight:700;padding:15px 34px;border-radius:8px;text-decoration:none;letter-spacing:-.01em;transition:background .2s,transform .2s,box-shadow .2s}
+.btn-hero:hover{background:var(--amb2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,149,0,.35)}
+.arr{transition:transform .2s}
+.btn-hero:hover .arr{transform:translateX(4px)}
+.cta-note{font-size:12px;font-weight:400;color:rgba(255,255,255,.45);letter-spacing:.04em}
+.cta-note span{color:var(--amb2);font-weight:500}
+
+.hcb-right{display:flex;flex-direction:column;gap:20px;opacity:0;animation:fi .7s .7s forwards}
+.stat-item{text-align:right}
+.stat-val{font-family:'Fraunces',serif;font-size:38px;font-weight:900;color:var(--amb);line-height:1;letter-spacing:-.03em}
+.stat-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:3px}
+.stat-div{width:1px;height:1px;background:rgba(255,255,255,.1);align-self:stretch}
+
+/* ═══ MIDDLE: THE CURRICULUM THEY NEVER TAUGHT YOU ═══
+     Full-width alternating bands — not cards */
+.curriculum{position:relative;z-index:1}
+
+.curr-intro{padding:80px 52px 0;border-top:1px solid var(--rl)}
+.ci-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-bottom:60px;border-bottom:1px solid var(--rl)}
+.ci-hl{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,68px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
+.ci-hl em{font-style:italic;color:var(--grn)}
+.ci-desc{font-size:15px;font-weight:400;color:var(--tx);line-height:1.82;max-width:400px}
+.ci-desc strong{color:var(--ink);font-weight:600}
+
+/* alternating full-width rows */
+.curr-row{display:grid;grid-template-columns:80px 1fr 1fr;align-items:stretch;border-bottom:1px solid var(--rl);transition:background .2s}
+.curr-row:hover{background:rgba(26,71,49,.02)}
+.curr-row.alt{background:var(--sf)}
+.curr-row.alt:hover{background:rgba(26,71,49,.03)}
+
+.cr-num{display:flex;align-items:center;justify-content:center;padding:40px 0;border-right:1px solid var(--rl);font-family:'Fraunces',serif;font-size:42px;font-weight:900;color:rgba(26,71,49,.1);line-height:1}
+
+.cr-was{padding:40px 44px;border-right:1px solid var(--rl);display:flex;flex-direction:column;justify-content:center;gap:8px}
+.cr-label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.cr-was-t{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#B0BAB5;line-height:1.3;text-decoration:line-through;text-decoration-color:#D5DDD9;font-style:italic}
+
+.cr-is{padding:40px 44px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.cr-label.grn{color:var(--grn)}
+.cr-is-t{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--ink);line-height:1.3}
+.cr-is-t em{font-style:italic;color:var(--grn)}
+.cr-tag{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px}
+.cr-tag.g{background:var(--grn-p);color:var(--grn);border:1px solid var(--grn-b)}
+.cr-tag.a{background:var(--amb-p);color:#8A5A00;border:1px solid var(--amb-b)}
+.cr-tag.c{background:var(--cor-p);color:var(--coral);border:1px solid rgba(239,108,87,.2)}
+
+/* ═══ CLIFFHANGER ═══ */
+.cliff{padding:110px 52px;background:var(--ink);position:relative;overflow:hidden;z-index:1}
+.cliff::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(26,71,49,.25) 0%,transparent 60%);pointer-events:none}
+.cliff::after{content:'';position:absolute;bottom:-200px;left:-100px;width:600px;height:500px;background:radial-gradient(circle,rgba(245,149,0,.07) 0%,transparent 65%);pointer-events:none}
+
+.cliff-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+
+.cliff-l{}
+.cl-kicker{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.ck-dot{width:8px;height:8px;border-radius:50%;background:var(--amb)}
+.ck-t{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amb)}
+h2.cliff-hl{font-family:'Fraunces',serif;font-size:clamp(44px,5.5vw,76px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:var(--cream);margin-bottom:22px}
+h2.cliff-hl em{font-style:italic;color:var(--amb2)}
+.cliff-body{font-size:16px;font-weight:300;color:rgba(250,250,244,.5);line-height:1.82;margin-bottom:36px;max-width:440px}
+.cliff-body strong{color:var(--cream);font-weight:500}
+.btn-amb{display:inline-flex;align-items:center;gap:10px;background:var(--amb);color:var(--ink);font-size:15px;font-weight:700;padding:16px 36px;border-radius:8px;text-decoration:none;letter-spacing:-.01em;transition:transform .2s,box-shadow .2s,opacity .2s}
+.btn-amb:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,149,0,.3);opacity:.9}
+.cliff-note{display:block;font-size:12px;font-weight:400;color:rgba(250,250,244,.3);letter-spacing:.04em;margin-top:12px}
+.cliff-note span{color:var(--amb2);font-weight:500}
+
+/* locked resource stack */
+.res-wrap{position:relative}
+.res-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,250,244,.2);margin-bottom:12px}
+.res{background:#141E17;border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.res-head{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;background:#0F1A12}
+.res-title{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--cream);letter-spacing:-.02em;font-style:italic}
+.res-badge{font-size:10px;font-weight:600;color:var(--amb2);background:rgba(245,149,0,.12);border:1px solid rgba(245,149,0,.22);padding:4px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase}
+.res-items{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.04);filter:blur(5px);opacity:.18;user-select:none;pointer-events:none}
+.ri{background:#141E17;padding:17px 24px;display:flex;align-items:center;gap:14px}
+.ri-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ri-icon.g{background:rgba(26,71,49,.3)}
+.ri-icon.a{background:rgba(245,149,0,.12)}
+.ri-c{flex:1}
+.ri-name{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--cream);margin-bottom:2px;letter-spacing:-.01em}
+.ri-desc{font-size:11px;font-weight:400;color:rgba(250,250,244,.35);letter-spacing:.02em}
+.ri-tag{font-size:10px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.ri-tag.g{background:rgba(26,71,49,.3);color:#6DBF8A;border:1px solid rgba(26,71,49,.4)}
+.ri-tag.a{background:rgba(245,149,0,.12);color:var(--amb2);border:1px solid rgba(245,149,0,.22)}
+.res-ov{position:absolute;inset:0;top:54px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:rgba(10,15,11,.85);backdrop-filter:blur(3px)}
+.lock-i{font-size:28px}
+.lock-l{font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:var(--cream);letter-spacing:-.02em}
+.lock-l em{font-style:italic;color:var(--amb2)}
+.lock-s{font-size:12px;font-weight:400;color:rgba(250,250,244,.35);letter-spacing:.04em}
+
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.rev{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+.rev.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+</style></head><body>
+
+<div class="topbar">
+  <span class="tb-t">Vince Opra &mdash; <strong>Video Editor at 15. $52K/month by 22.</strong></span>
+  <span class="tb-sep">&middot;</span>
+  <span class="tb-t"><strong>Grow Creatives</strong> &mdash; Business Systems for Creative Entrepreneurs</span>
+</div>
+
+<nav>
+  <div class="logo"><em>Grow</em> Creatives</div>
+  <div class="nav-r">
+    <div class="nav-tag">by Vince Opra &mdash; Creative Business Systems</div>
+    <a href="#" class="btn-nav">Start Growing &rarr;</a>
+  </div>
+</nav>
+
+<!-- HERO BAND 1: Headline + proof cards -->
+<div class="hero">
+  <div class="hero-headline-band">
+    <div class="hb-inner">
+      <div class="hb-left">
+        <div class="hb-kicker"><div class="hk-dot"></div><div class="hk-t">Grow Creatives &mdash; For Freelancers &amp; Creative Entrepreneurs</div></div>
+        <h1>Grow Your<br>Creative Business<br><em>Without</em> Burning<br><span class="amb">Out.</span></h1>
+      </div>
+      <div class="hb-right">
+        <div class="proof-stack">
+          <div class="ps-card">
+            <div class="ps-icon g">&#127775;</div>
+            <div class="ps-c"><div class="ps-name">Alex R. &mdash; Video Editor</div><div class="ps-detail">Raised rates from $500 to $2,800/month per client</div></div>
+            <div class="ps-result">+460% Rate</div>
+          </div>
+          <div class="ps-card">
+            <div class="ps-icon a">&#128200;</div>
+            <div class="ps-c"><div class="ps-name">Maria S. &mdash; Graphic Designer</div><div class="ps-detail">Went from 6 low-ticket clients to 2 high-ticket retainers</div></div>
+            <div class="ps-result">$8K/mo</div>
+          </div>
+          <div class="ps-card">
+            <div class="ps-icon c">&#9200;</div>
+            <div class="ps-c"><div class="ps-name">Tom K. &mdash; Content Creator</div><div class="ps-detail">Rebuilt client roster, cut working hours by 40%</div></div>
+            <div class="ps-result">Less Stress</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO BAND 2: CTA on green -->
+  <div class="hero-cta-band">
+    <div class="hcb-left">
+      <p class="hero-sub">Vince Opra helps freelancers and creative entrepreneurs build <strong>sustainable businesses</strong> &mdash; with better clients, better rates, and a whole lot less stress. The business side they never taught you. Finally.</p>
+      <div class="cta-row">
+        <a href="#" class="btn-hero">Start Growing <span class="arr">&rarr;</span></a>
+        <div class="cta-note">Free to start &middot; <span>real systems, real results</span></div>
+      </div>
+    </div>
+    <div class="hcb-right">
+      <div class="stat-item"><div class="stat-val">$52K</div><div class="stat-lbl">Vince's Monthly Revenue</div></div>
+      <div class="stat-item"><div class="stat-val">22</div><div class="stat-lbl">Years Old</div></div>
+      <div class="stat-item"><div class="stat-val">7yr</div><div class="stat-lbl">In the Trenches</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MIDDLE: full-width alternating rows -->
+<section class="curriculum">
+  <div class="curr-intro">
+    <div class="ci-inner rev">
+      <h2 class="ci-hl">The business side<br>they <em>never</em><br>taught you.</h2>
+      <p class="ci-desc">Being talented isn't enough to build a successful creative business. You need <strong>the right systems, the right positioning</strong>, and someone who's been through it already. This is the curriculum your art school, design degree, and YouTube tutorials skipped.</p>
+    </div>
+  </div>
+
+  <div class="curr-row rev">
+    <div class="cr-num">1</div>
+    <div class="cr-was"><div class="cr-label">What They Told You</div><div class="cr-was-t">"Do great work and clients will find you"</div></div>
+    <div class="cr-is"><div class="cr-label grn">What Actually Works</div><div class="cr-is-t">Positioning yourself as a <em>specialist</em>, not a generalist &mdash; so clients seek you out and stop comparing you on price</div><span class="cr-tag g">Positioning</span></div>
+  </div>
+  <div class="curr-row alt rev d1">
+    <div class="cr-num">2</div>
+    <div class="cr-was"><div class="cr-label">What They Told You</div><div class="cr-was-t">"Charge hourly, it's fair to everyone"</div></div>
+    <div class="cr-is"><div class="cr-label grn">What Actually Works</div><div class="cr-is-t">Package and price your services on <em>outcomes</em>, not time &mdash; the single biggest lever to doubling your income without more hours</div><span class="cr-tag a">Pricing</span></div>
+  </div>
+  <div class="curr-row rev">
+    <div class="cr-num">3</div>
+    <div class="cr-was"><div class="cr-label">What They Told You</div><div class="cr-was-t">"Always say yes to every client opportunity"</div></div>
+    <div class="cr-is"><div class="cr-label grn">What Actually Works</div><div class="cr-is-t">Qualifying clients <em>before</em> they hire you &mdash; so your roster fills with high-retention, high-respect clients who pay on time</div><span class="cr-tag g">Client Systems</span></div>
+  </div>
+  <div class="curr-row alt rev d1">
+    <div class="cr-num">4</div>
+    <div class="cr-was"><div class="cr-label">What They Told You</div><div class="cr-was-t">"Work harder and grind through the dry spells"</div></div>
+    <div class="cr-is"><div class="cr-label grn">What Actually Works</div><div class="cr-is-t">Building a <em>referral and content flywheel</em> that generates leads consistently &mdash; so income is predictable, not feast-or-famine</div><span class="cr-tag c">Lead Generation</span></div>
+  </div>
+</section>
+
+<!-- CLIFFHANGER -->
+<section class="cliff">
+  <div class="cliff-in">
+    <div class="cliff-l rev">
+      <div class="cl-kicker"><div class="ck-dot"></div><div class="ck-t">Inside Grow Creatives</div></div>
+      <h2 class="cliff-hl">The work you<br>love should<br>pay what it's <em>worth.</em></h2>
+      <p class="cliff-body"><strong>You already have the talent. What you need is the system.</strong> Vince Opra went from editing videos at 15 in a small Hungarian town to building a $52K/month creative business &mdash; and built Grow Creatives to hand other creatives exactly what he had to figure out the hard way. Start growing.</p>
+      <a href="#" class="btn-amb">Start Growing &rarr;</a>
+      <span class="cliff-note">Free to start &middot; <span>real systems, not theory</span></span>
+    </div>
+
+    <div class="res-wrap rev d2">
+      <div class="res-lbl">// grow_creatives &mdash; full resource access locked</div>
+      <div class="res">
+        <div class="res-head">
+          <div class="res-title">Grow Creatives — Complete Business System</div>
+          <div class="res-badge">Access Required</div>
+        </div>
+        <div class="res-items">
+          <div class="ri"><div class="ri-icon g">&#127919;</div><div class="ri-c"><div class="ri-name">The Positioning Blueprint</div><div class="ri-desc">niche down &middot; specialist framing &middot; stop competing on price</div></div><div class="ri-tag g">Foundation</div></div>
+          <div class="ri"><div class="ri-icon a">&#128176;</div><div class="ri-c"><div class="ri-name">High-Ticket Packaging System</div><div class="ri-desc">outcome-based pricing &middot; retainer structures &middot; rate negotiation</div></div><div class="ri-tag a">Pricing</div></div>
+          <div class="ri"><div class="ri-icon g">&#129309;</div><div class="ri-c"><div class="ri-name">Client Qualification Framework</div><div class="ri-desc">discovery calls &middot; red flag filters &middot; contracts that protect you</div></div><div class="ri-tag g">Clients</div></div>
+          <div class="ri"><div class="ri-icon a">&#128161;</div><div class="ri-c"><div class="ri-name">Referral + Content Flywheel</div><div class="ri-desc">personal brand content &middot; referral systems &middot; consistent lead flow</div></div><div class="ri-tag a">Growth</div></div>
+          <div class="ri"><div class="ri-icon g">&#9889;</div><div class="ri-c"><div class="ri-name">AI Tools for Creative Entrepreneurs</div><div class="ri-desc">automate admin &middot; Vince's creator AI toolkit &middot; scale without burnout</div></div><div class="ri-tag g">Systems</div></div>
+        </div>
+        <div class="res-ov">
+          <div class="lock-i">&#128274;</div>
+          <div class="lock-l">Start to <em>Unlock</em></div>
+          <div class="lock-s">free access &middot; full system included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const els=document.querySelectorAll('.rev');
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.08});
+els.forEach(el=>io.observe(el));
+</script>
+</body></html>
